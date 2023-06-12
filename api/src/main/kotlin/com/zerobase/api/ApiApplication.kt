@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan
 @SpringBootApplication
 @EntityScan(basePackages = ["com.zerobase.domain"])
 @ComponentScan(basePackages = ["com.zerobase"])
-@EnableCaching
+//@EnableCaching
 class ApiApplication
 
 fun main(args: Array<String>) {

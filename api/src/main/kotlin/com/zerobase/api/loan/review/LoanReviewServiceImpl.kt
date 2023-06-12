@@ -18,14 +18,11 @@ class LoanReviewServiceImpl(
                         ?: throw CustomException(CustomErrorCode.RESULT_NOT_FOUND)
         )
     }
-
-
     private fun LoanReview.toResponseDto() =
             LoanReviewDto.LoanResult(
                     userLimitAmount = this.loanLimitedAmount,
                     userLoanInterest = this.loanInterest
             )
-
     @Cacheable(value = ["REVIEW"], key = "#userKey", cacheManager = "redisCacheManager")
     override fun getLoanResult(userKey: String) =
             loanReviewRepository.findByUserKey(userKey)
