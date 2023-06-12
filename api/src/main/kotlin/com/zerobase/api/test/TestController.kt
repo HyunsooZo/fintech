@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/fintech/api/v1")
 class TestController(
-    private val testService: TestService
+        private val testService: TestService
 ) {
 
     @GetMapping("/test/get/{userKey}")
     fun test(
-        @PathVariable userKey: String
+            @PathVariable userKey: String
     ): TestDto.UserInfoDto = testService.testGetService(userKey)
 }
