@@ -47,7 +47,7 @@ class LoanRequestControllerTest {
         encryptComponent = EncryptComponent()
 
         loanRequestController = LoanRequestController(loanRequestServiceImpl)
-        loanRequestServiceImpl = LoanRequestServiceImpl(generateKey, userInfoRepository, encryptComponent)
+//        loanRequestServiceImpl = LoanRequestServiceImpl(generateKey, userInfoRepository, encryptComponent)
 
         mockMvc = MockMvcBuilders.standaloneSetup(loanRequestController).build()
 
@@ -77,10 +77,4 @@ class LoanRequestControllerTest {
 
         }.andExpect { status{isOk()} }
     }
-
-
-
-
-
-
 }
